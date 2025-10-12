@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Collab - Costur Confecções</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #f1f5fb;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: white;
+      padding: 40px 50px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      width: 90%;
+      max-width: 360px;
+      text-align: center;
+    }
+
+    .logo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 25px;
+    }
+
+    .logo img {
+      width: 80px;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    .logo h1 {
+      color: #007bff;
+      font-size: 26px;
+      font-weight: bold;
+    }
+
+    h2 {
+      font-size: 22px;
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input {
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 14px;
+      width: 100%;
+      transition: 0.3s;
+      text-align: center;
+    }
+
+    input:focus {
+      border-color: #007bff;
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(0,123,255,0.1);
+    }
+
+    button {
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #005fcc;
+    }
+
+    .footer-text {
+      margin-top: 20px;
+      font-size: 13px;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">
+      <img src="https://files.jotform.com/jufs/costurconfeccoes/form_files/Sem%20T%C3%ADtulo-1%20(1).68eb7d5bb9f6e5.99975224.png?md5=1NgOhCwV6INmhoaOFNhfdQ&expires=1760281726" alt="Logo Costur Confecções">
+      <h1>Costur Confecções</h1>
+    </div>
+
+    <h2>Collab</h2>
+
+    <form id="loginForm">
+      <input type="text" id="adminName" placeholder="Administrador" required>
+      <input type="password" id="adminId" placeholder="ID do Administrador" required>
+      <button type="submit">Entrar</button>
+    </form>
+
+    <p class="footer-text">Acesso restrito aos colaboradores</p>
+  </div>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const adminName = document.getElementById("adminName").value.trim().toLowerCase();
+      const adminId = document.getElementById("adminId").value.trim();
+
+      // Credenciais válidas
+      const admins = {
+        "wallison": "10844833436",
+        "eduarda": "70923137408"
+      };
+
+      if (admins[adminName] === adminId) {
+        window.location.href = "https://www.jotform.com/pt/app/252836716843668/page/50";
+      } else {
+        alert("Acesso negado. Verifique suas credenciais.");
+      }
+    });
+  </script>
+</body>
+</html>
